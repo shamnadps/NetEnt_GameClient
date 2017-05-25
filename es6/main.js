@@ -1,4 +1,4 @@
-/* global fetch */
+/* global fetch, document */
 const RESOURCE = {
   PREFIX: 'img/Symbol_',
   EXTN: '.png',
@@ -72,11 +72,19 @@ class Game {
 }
 
 let game = new Game()
-document.querySelector('#playButton').addEventListener('click', () => {
-  game.play()
-})
+let playButton = document.querySelector('#playButton')
+if (playButton) {
+  playButton.addEventListener('click', () => {
+    game.play()
+  })
+}
 
-document.querySelector('#bonusButton').addEventListener('click', () => {
-  game.play()
-  document.querySelector('#bonusButton').style.display = 'none'
-})
+let bonusButton = document.querySelector('#bonusButton')
+if (bonusButton) {
+  bonusButton.addEventListener('click', () => {
+    game.play()
+    document.querySelector('#bonusButton').style.display = 'none'
+  })
+}
+
+export default Game;

@@ -4,17 +4,25 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "convertes5": "babel --presets es2015 es6/main.js -o build/main.bundle.js",
+    "convertes5": "webpack",
+    "convertes5main": "babel --presets es2015 es6/main.js -o build/main.bundle.js",
+    "convertes5test": "babel --presets es2015 test/main.spec.js -o build/main.spec.js",
     "start": "npm run-script convertes5 && http-server",
-    "test": "standard --fix es6/*"
+    "test": "webpack && npm run-script convertes5test && mocha build/**spec.js -r jsdom-global/register"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "6.24.1",
-    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
     "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "babel-register": "6.24.1",
+    "chai": "3.5.0",
     "http-server": "0.10.0",
+    "jsdom": "11.0.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "3.4.2",
     "standard": "10.0.2"
   }
 }

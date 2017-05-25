@@ -1,22 +1,86 @@
-'use strict';
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/* global fetch */
-var RESOURCE = {
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* global fetch, document */
+const RESOURCE = {
   PREFIX: 'img/Symbol_',
   EXTN: '.png',
   DEFAULT: 'img/default.png'
 };
 
-var Game = function () {
-  function Game() {
-    _classCallCheck(this, Game);
-
+class Game {
+  constructor() {
     this.serverValue = [];
     this._setImage();
   }
@@ -24,115 +88,80 @@ var Game = function () {
   /**
   * play/reload the game
   **/
+  play() {
+    this.serverValue = [];
 
-
-  _createClass(Game, [{
-    key: 'play',
-    value: function play() {
-      var _this = this;
-
-      this.serverValue = [];
-
-      this._requestServer().then(function (serverValue) {
-        _this.serverValue = serverValue[0].values;
-        _this._setTitle(serverValue[2].result);
-        _this._setImage();
-        if (serverValue[1].bonus) {
-          _this._showBonus();
-        }
-      });
-    }
-
-    /**
-    * set game title
-    * @param value
-    * @private
-    **/
-
-  }, {
-    key: '_setTitle',
-    value: function _setTitle() {
-      var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Loading';
-
-      var gameInfo = document.querySelector('#gameInfo');
-      gameInfo.innerHTML = value;
-    }
-
-    /**
-    * set image
-    * @private
-    **/
-
-  }, {
-    key: '_setImage',
-    value: function _setImage() {
-      var imageHolder = document.querySelectorAll('.game-image');
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = imageHolder.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var _step$value = _slicedToArray(_step.value, 2),
-              index = _step$value[0],
-              value = _step$value[1];
-
-          value.src = isNaN(this.serverValue[index]) ? RESOURCE.DEFAULT : '' + RESOURCE.PREFIX + this.serverValue[index] + RESOURCE.EXTN;
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
+    this._requestServer().then(serverValue => {
+      this.serverValue = serverValue[0].values;
+      this._setTitle(serverValue[2].result);
+      this._setImage();
+      if (serverValue[1].bonus) {
+        this._showBonus();
       }
+    });
+  }
+
+  /**
+  * set game title
+  * @param value
+  * @private
+  **/
+  _setTitle(value = 'Loading') {
+    let gameInfo = document.querySelector('#gameInfo');
+    gameInfo.innerHTML = value;
+  }
+
+  /**
+  * set image
+  * @private
+  **/
+  _setImage() {
+    let imageHolder = document.querySelectorAll('.game-image');
+    for (let [index, value] of imageHolder.entries()) {
+      value.src = isNaN(this.serverValue[index]) ? RESOURCE.DEFAULT : `${RESOURCE.PREFIX}${this.serverValue[index]}${RESOURCE.EXTN}`;
     }
+  }
 
-    /**
-    * show bonus option
-    * @private
-    **/
+  /**
+  * show bonus option
+  * @private
+  **/
+  _showBonus() {
+    document.querySelector('#bonusButton').style.display = 'block';
+  }
 
-  }, {
-    key: '_showBonus',
-    value: function _showBonus() {
-      document.querySelector('#bonusButton').style.display = 'block';
-    }
-
-    /**
-    * calling server
-    **/
-
-  }, {
-    key: '_requestServer',
-    value: function _requestServer() {
-      var localPromise = new Promise(function (resolve, reject) {
-        fetch('http://localhost:1337/casino', {
-          method: 'get'
-        }).then(function (d) {
-          resolve(d.json());
-        });
+  /**
+  * calling server
+  **/
+  _requestServer() {
+    let localPromise = new Promise((resolve, reject) => {
+      fetch('http://localhost:1337/casino', {
+        method: 'get'
+      }).then(function (d) {
+        resolve(d.json());
       });
-      return localPromise;
-    }
-  }]);
+    });
+    return localPromise;
+  }
+}
 
-  return Game;
-}();
+let game = new Game();
+let playButton = document.querySelector('#playButton');
+if (playButton) {
+  playButton.addEventListener('click', () => {
+    game.play();
+  });
+}
 
-var game = new Game();
-document.querySelector('#playButton').addEventListener('click', function () {
-  game.play();
-});
+let bonusButton = document.querySelector('#bonusButton');
+if (bonusButton) {
+  bonusButton.addEventListener('click', () => {
+    game.play();
+    document.querySelector('#bonusButton').style.display = 'none';
+  });
+}
 
-document.querySelector('#bonusButton').addEventListener('click', function () {
-  game.play();
-  document.querySelector('#bonusButton').style.display = 'none';
-});
+/* harmony default export */ __webpack_exports__["default"] = (Game);
+
+/***/ })
+/******/ ]);
