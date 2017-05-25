@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 0;
+    color: #000;
+}
+
+.continer {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.col {
+    width: 33.33%;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.col .img-wrap {
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 10px;
+}
+
+.col .img-wrap .game-image {
+    max-width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+button {
+    text-transform: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding: 20px;
+    background: url("../img/button.png");
+    font-size: 16px;
+    border: 0;
+    color: #444;
+}
+
+#playButton {
+  cursor: pointer;
+}
+
+#bonusButton {
+  cursor: pointer;
+  margin-right:50px;
+  display:none;
+}
