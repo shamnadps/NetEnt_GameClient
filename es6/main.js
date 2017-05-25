@@ -16,7 +16,6 @@ class Game {
     **/
   play () {
     this.serverValue = []
-    this._setTitle()
 
     this._requestServer().then((serverValue) => {
       this.serverValue = serverValue[0].values
