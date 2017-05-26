@@ -1,0 +1,55 @@
+
+#stage {
+  width: 100%;
+  -webkit-perspective: 800;
+}
+
+#rotate {
+  margin: 0 auto;
+  height:180px;
+  -webkit-transform-style: preserve-3d;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.ring {
+  margin: 0 auto;
+  height: 110px;
+  width: 600px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+.poster {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  padding:25px;
+  box-sizing: border-box;
+}
+
+#ring-1 {
+  -webkit-animation-name: x-spin;
+  -webkit-animation-duration: 1.5s;
+
+}
+
+@-webkit-keyframes x-spin {
+  0%    { -webkit-transform: rotateX(0deg); }
+  50%   { -webkit-transform: rotateX(180deg); }
+  100%  { -webkit-transform: rotateX(360deg); }
+}
+
+@-webkit-keyframes y-spin {
+  0%    { -webkit-transform: rotateY(0deg); }
+  50%   { -webkit-transform: rotateY(180deg); }
+  100%  { -webkit-transform: rotateY(360deg); }
+}
+
+@-webkit-keyframes back-y-spin {
+  0%    { -webkit-transform: rotateY(360deg); }
+  50%   { -webkit-transform: rotateY(180deg); }
+  100%  { -webkit-transform: rotateY(0deg); }
+}

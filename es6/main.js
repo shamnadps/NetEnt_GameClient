@@ -11,36 +11,38 @@ class Game {
     this._setImage()
   }
 
-    /**
-    * play/reload the game
-    **/
+  /**
+  * play/reload the game
+  **/
   play () {
     this.serverValue = []
 
     this._requestServer().then((serverValue) => {
       this.serverValue = serverValue[0].values
-      this._setTitle(serverValue[2].result)
       this._setImage()
+      this._setTitle(serverValue[2].result)
       if (serverValue[1].bonus) {
         this._showBonus()
       }
+      document.querySelector('#slotSelected').style.display = 'block'
+      document.querySelector('#slotRotation').style.display = 'none'
     })
   }
 
-    /**
-    * set game title
-    * @param value
-    * @private
-    **/
+  /**
+  * set game title
+  * @param value
+  * @private
+  **/
   _setTitle (value = 'Loading') {
     let gameInfo = document.querySelector('#gameInfo')
     gameInfo.innerHTML = value
   }
 
-    /**
-    * set image
-    * @private
-    **/
+  /**
+  * set image
+  * @private
+  **/
   _setImage () {
     let imageHolder = document.querySelectorAll('.game-image')
     for (let [index, value] of imageHolder.entries()) {
@@ -48,23 +50,26 @@ class Game {
     }
   }
 
-    /**
-    * show bonus option
-    * @private
-    **/
+  /**
+  * show bonus option
+  * @private
+  **/
   _showBonus () {
     document.querySelector('#bonusButton').style.display = 'block'
   }
 
-    /**
-    * calling server
-    **/
+  /**
+  * calling server
+  **/
   _requestServer () {
     let localPromise = new Promise((resolve, reject) => {
       fetch('http://localhost:1337/casino', {
         method: 'get'
       }).then(function (d) {
-        resolve(d.json())
+        setTimeout(function(){
+          resolve(d.json())
+        }, 1000);
+
       })
     })
     return localPromise
@@ -75,6 +80,9 @@ let game = new Game()
 let playButton = document.querySelector('#playButton')
 if (playButton) {
   playButton.addEventListener('click', () => {
+    document.querySelector('#slotSelected').style.display = 'none'
+    document.querySelector('#slotRotation').style.display = 'block'
+    game._setTitle('Spinning..')
     game.play()
   })
 }
@@ -84,6 +92,8 @@ if (bonusButton) {
   bonusButton.addEventListener('click', () => {
     game.play()
     document.querySelector('#bonusButton').style.display = 'none'
+    document.querySelector('#slotSelected').style.display = 'none'
+    document.querySelector('#slotRotation').style.display = 'block'
   })
 }
 

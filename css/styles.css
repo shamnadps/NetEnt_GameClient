@@ -20,6 +20,7 @@ h1 {
 
 .col {
     width: 33.33%;
+    height:200px;
     overflow: hidden;
     float: left;
     text-align: center;
@@ -61,6 +62,10 @@ h1 {
 #bonusButton {
   cursor: pointer;
   display: none;
+}
+
+#slotRotation {
+  display:none;
 }
 
 @media only screen and (orientation:portrait){
