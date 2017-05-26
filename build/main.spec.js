@@ -1,13 +1,35 @@
 'use strict';
 
-var _mainBundle = require('../build/main.bundle.js');
+/* global describe, it */
+var Game = require('../build/main.bundle.js');
+var game = new Game.Game();
 
-var _mainBundle2 = _interopRequireDefault(_mainBundle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-describe('Game()', function () {
-  it('Constructor Called', function () {
-    var game = new _mainBundle2.default.constructor();
+describe('Plya()', function () {
+  it('Play() Method', function () {
+    game.play();
   });
-}); /* global describe, it */
+});
+
+describe('_setImage()', function () {
+  it('Setting the images', function () {
+    game._setImage();
+  });
+});
+
+describe('_setTitle()', function () {
+  it('Setting Title', function () {
+    game._setTitle();
+  });
+});
+
+describe('_showBonus()', function () {
+  it('Show Bonus', function () {
+    game._showBonus();
+  });
+});
+
+describe('_requestServer()', function () {
+  it('checking Server response', function () {
+    game._requestServer();
+  });
+});

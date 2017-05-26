@@ -1,3 +1,4 @@
+module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -144,8 +145,8 @@ class Game {
     return localPromise;
   }
 }
+/* harmony export (immutable) */ __webpack_exports__["Game"] = Game;
 
-let game = new Game();
 let playButton = document.querySelector('#playButton');
 if (playButton) {
   playButton.addEventListener('click', () => {
@@ -160,8 +161,6 @@ if (bonusButton) {
     document.querySelector('#bonusButton').style.display = 'none';
   });
 }
-
-/* harmony default export */ __webpack_exports__["default"] = (Game);
 
 /***/ })
 /******/ ]);

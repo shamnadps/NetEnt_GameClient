@@ -1,8 +1,33 @@
 /* global describe, it */
-import Game from '../build/main.bundle.js';
+var Game = require('../build/main.bundle.js');
+let game = new Game.Game()
 
-describe('Game()', function () {
-  it('Constructor Called', function () {
-    let game = new Game.constructor;
+describe('Plya()', function () {
+  it('Play() Method', function () {
+    game._play();
+  })
+})
+
+describe('_setImage()', function () {
+  it('Setting the images', function () {
+    game._setImage();
+  })
+})
+
+describe('_setTitle()', function () {
+  it('Setting Title', function () {
+    game._setTitle();
+  })
+})
+
+describe('_showBonus()', function () {
+  it('Show Bonus', function () {
+    game._showBonus();
+  })
+})
+
+describe('_requestServer()', function () {
+  it('checking Server response', function () {
+    game._requestServer();
   })
 })

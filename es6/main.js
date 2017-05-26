@@ -5,7 +5,7 @@ const RESOURCE = {
   DEFAULT: 'img/default.png'
 }
 
-class Game {
+export class Game {
   constructor () {
     this.serverValue = []
     this._setImage()
@@ -14,7 +14,7 @@ class Game {
     /**
     * play/reload the game
     **/
-  play () {
+  _play () {
     this.serverValue = []
 
     this._requestServer().then((serverValue) => {
@@ -70,21 +70,17 @@ class Game {
     return localPromise
   }
 }
-
-let game = new Game()
 let playButton = document.querySelector('#playButton')
 if (playButton) {
   playButton.addEventListener('click', () => {
-    game.play()
+    game._play()
   })
 }
 
 let bonusButton = document.querySelector('#bonusButton')
 if (bonusButton) {
   bonusButton.addEventListener('click', () => {
-    game.play()
+    game._play()
     document.querySelector('#bonusButton').style.display = 'none'
   })
 }
-
-export default Game;
