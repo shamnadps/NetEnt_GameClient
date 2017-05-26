@@ -245,6 +245,8 @@ return /******/ (function(modules) { // webpackBootstrap
               setTimeout(function () {
                 resolve(d.json());
               }, 1000);
+            }).catch(() => {
+              this._setTitle('Server connectivity issue!! Check Server!.');
             });
           });
           return localPromise;
