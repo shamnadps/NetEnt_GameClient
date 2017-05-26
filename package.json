@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "convertes5": "webpack",
-    "convertes5main": "babel --presets es2015 es6/main.js -o build/main.bundle.js",
+    "convertes5main": "babel --presets es2015 es6/client.js -o build/main.bundle.js",
     "convertes5test": "babel --presets es2015 test/main.spec.js -o build/main.spec.js",
     "start": "npm run-script convertes5 && http-server",
     "test": "webpack && standard --fix es6/* && npm run-script convertes5test && mocha build/**spec.js -r jsdom-global/register"
