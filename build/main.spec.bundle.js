@@ -290,7 +290,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__build_main_bundle_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__build_main_bundle_js__);
 /* global describe, it */
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__build_main_bundle_js___default.a);
 let game = new __WEBPACK_IMPORTED_MODULE_0__build_main_bundle_js___default.a();
 describe('Game()', function () {
   it('Constructor Called', function () {
