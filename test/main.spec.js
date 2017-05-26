@@ -1,8 +1,8 @@
 /* global describe, it */
 import Game from '../build/main.bundle.js'
-console.log(Game)
+let game = new Game()
 describe('Game()', function () {
   it('Constructor Called', function () {
-    let game = new Game.constructor()
+    game.play();
   })
 })
