@@ -66,10 +66,9 @@ class Game {
       fetch('http://localhost:1337/casino', {
         method: 'get'
       }).then(function (d) {
-        setTimeout(function(){
+        setTimeout(function () {
           resolve(d.json())
-        }, 1000);
-
+        }, 1000)
       })
     })
     return localPromise
@@ -97,4 +96,4 @@ if (bonusButton) {
   })
 }
 
-export default Game;
+export default Game
