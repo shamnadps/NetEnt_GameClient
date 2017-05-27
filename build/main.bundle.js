@@ -155,8 +155,24 @@ class Game {
     } else if (value === 'Small Win!') {
       increment = 10;
     }
-    let points = document.querySelector('#points').innerHTML;
-    document.querySelector('#points').innerHTML = parseInt(points) + increment;
+    let points = parseInt(document.querySelector('#points').innerHTML);
+    let total = points + increment;
+    this._updatePointCounter(points, total, this);
+  }
+
+  /**
+  * update point counter
+  * @param points, total, object
+  * @private
+  **/
+  _updatePointCounter(points, total, object) {
+    setTimeout(function () {
+      document.querySelector('#points').innerHTML = points;
+      if (points < total) {
+        points++;
+        object._updatePointCounter(points, total, object);
+      }
+    }, 30);
   }
 
   /**
