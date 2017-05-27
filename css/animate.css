@@ -9,7 +9,7 @@
   height:180px;
   -webkit-transform-style: preserve-3d;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   overflow: hidden;
 }
 

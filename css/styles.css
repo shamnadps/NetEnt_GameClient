@@ -1,60 +1,62 @@
 body {
-    font-family: 'Roboto', 'Sans Serif';
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
+  font-family: 'Roboto', 'Sans Serif';
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-image: url("../img/bg.jpg");
+  color: #fff;
 }
 
 .continer {
-    max-width: 1024px;
-    margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .col {
-    width: 33.33%;
-    height:200px;
-    overflow: hidden;
-    float: left;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
+  width: 33.33%;
+  height:200px;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .colnoborder {
-    width: 33.33%;
-    overflow: hidden;
-    float: left;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+  width: 33.33%;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .colheader {
-    width: 33.33%;
-    overflow: hidden;
-    float: left;
-    text-align: center;
-    padding: 20px;
-    height:120px;
-    box-sizing: border-box;
+  width: 33.33%;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+  padding: 20px;
+  height:120px;
+  box-sizing: border-box;
 }
 
 .col .img-wrap {
-        border: 1px solid #ccc;
-        text-align: center;
-        padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
 }
 
 .col .img-wrap .game-image {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 #playButton {
@@ -77,27 +79,32 @@ body {
   padding:20px;
 }
 
-#points {
+#pointHolder {
   font-size:36px;
   padding-top:25px;
   padding-bottom: 25px;
   padding-right: 25px;
-  width:20%;
+  width:70%;
+  height:80px;
   float:left;
   text-align: left;
   display: inline-block;
   overflow: hidden;
 }
 
+#points {
+  width:20%;
+}
+
 #gameInfo {
-  float:left;
+  position:absolute;
   padding:25px;
-  width:60%;
-  font-size:36px;
+  width:100%;
+  max-width:1024px;
+  font-size:40px;
   display: inline-block;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
-  padding-left: 40px;
 }
 
 @media only screen and (orientation:portrait){
@@ -107,6 +114,6 @@ body {
 }
 @media only screen and (orientation:landscape){
   #warning {
-     display:none;
+    display:none;
   }
 }

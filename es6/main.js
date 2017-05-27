@@ -16,7 +16,7 @@ class Game {
   **/
   play () {
     this.serverValue = []
-
+    this._prePlayMethods ();
     this._requestServer().then((serverValue) => {
       this.serverValue = serverValue[0].values
       this._setImage()
@@ -28,6 +28,16 @@ class Game {
       document.querySelector('#slotSelected').style.display = 'block'
       document.querySelector('#slotRotation').style.display = 'none'
     })
+  }
+
+  /**
+  */
+  _prePlayMethods () {
+    document.querySelector('#gameInfo').className = ''
+    document.querySelector('#slotSelected').style.display = 'none'
+    document.querySelector('#slotRotation').style.display = 'block'
+    document.querySelector('#playButton').style.pointerEvents = 'none'
+    document.querySelector('#bonusButton').style.pointerEvents = 'none'
   }
 
   /**
@@ -67,6 +77,7 @@ class Game {
     let increment = 0
     if (value === 'Big Win!!!') {
       increment = 100
+      document.querySelector('#gameInfo').className = 'blink-image'
     } else if (value === 'Small Win!') {
       increment = 10
     }
@@ -86,6 +97,9 @@ class Game {
       if (points < total) {
         points++
         object._updatePointCounter(points, total, object)
+      } else {
+        document.querySelector('#playButton').style.pointerEvents = 'auto'
+        document.querySelector('#bonusButton').style.pointerEvents = 'auto'
       }
     }, 30)
   }
@@ -113,8 +127,6 @@ let game = new Game()
 let playButton = document.querySelector('#playButton')
 if (playButton) {
   playButton.addEventListener('click', () => {
-    document.querySelector('#slotSelected').style.display = 'none'
-    document.querySelector('#slotRotation').style.display = 'block'
     game._setTitle('Spinning..')
     game.play()
   })
@@ -125,8 +137,6 @@ if (bonusButton) {
   bonusButton.addEventListener('click', () => {
     game.play()
     document.querySelector('#bonusButton').style.display = 'none'
-    document.querySelector('#slotSelected').style.display = 'none'
-    document.querySelector('#slotRotation').style.display = 'block'
   })
 }
 

@@ -5,6 +5,7 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link href="css/animate.css" rel="stylesheet" type="text/css">
+  <link href="css/blink.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="continer">
@@ -12,10 +13,10 @@
     <div class="row">
       <h1 class="text-center" id="warning">View in landscape mode for better user experience</h1>
     </div>
+    <div id="gameInfo" class="gold">Let's play</div>
     <div class="row">
         <img id="pointsImage" src="img/points.png">
-        <div id="points">0</div>
-        <div id="gameInfo">Let's play</div>
+        <div id="pointHolder"><div id="points">0</div></div>
     </div>
 
     <div class="row" id="slotSelected">
@@ -98,7 +99,7 @@
         <div class="img-wrap" id="playButton"><img src="img/button.png" /></div>
       </div>
       <div class="colnoborder">
-        <div class="img-wrap" id="bonusButton"><img src="img/bonus.png"/></div>
+        <div class="blink-image" id="bonusButton"><img src="img/bonus.png"/></div>
       </div>
     </div>
 
