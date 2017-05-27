@@ -45,6 +45,7 @@ body {
   border: 1px solid black;
   text-align: center;
   padding: 10px;
+  background: white;
 }
 
 .col .img-wrap .game-image {
@@ -63,6 +64,9 @@ body {
   cursor: pointer;
 }
 
+#playButton:hover {
+  opacity: 0.5;
+}
 #bonusButton {
   cursor: pointer;
   display: none;
