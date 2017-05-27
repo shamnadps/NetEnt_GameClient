@@ -16,7 +16,7 @@ class Game {
   **/
   play () {
     this.serverValue = []
-    this._prePlayMethods ();
+    this._prePlayMethods()
     this._requestServer().then((serverValue) => {
       this.serverValue = serverValue[0].values
       this._setImage()
