@@ -24,6 +24,7 @@ class Game {
       if (serverValue[1].bonus) {
         this._showBonus()
       }
+      this._setPoints(serverValue[2].result)
       document.querySelector('#slotSelected').style.display = 'block'
       document.querySelector('#slotRotation').style.display = 'none'
     })
@@ -59,6 +60,21 @@ class Game {
   }
 
   /**
+  * set points
+  * @private
+  **/
+  _setPoints (value = 'No Win.') {
+    let increment = 0
+    if (value === 'Big Win!!!') {
+      increment = 100
+    } else if (value === 'Small Win!') {
+      increment = 10
+    }
+    let points = document.querySelector('#points').innerHTML
+    document.querySelector('#points').innerHTML = parseInt(points) + increment
+  }
+
+  /**
   * calling server
   **/
   _requestServer () {
@@ -70,7 +86,7 @@ class Game {
           resolve(d.json())
         }, 1000)
       }).catch(() => {
-        this._setTitle('Server connectivity issue!! Check Server!.')
+        this._setTitle('Server Down!! Restart Server!.')
       })
     })
     return localPromise
