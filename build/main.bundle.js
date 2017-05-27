@@ -87,7 +87,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const RESOURCE = {
   PREFIX: 'img/Symbol_',
   EXTN: '.png',
-  DEFAULT: 'img/default.png'
+  DEFAULT: 'img/Symbol_0.png'
 };
 
 class Game {

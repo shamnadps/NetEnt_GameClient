@@ -2,7 +2,7 @@
 const RESOURCE = {
   PREFIX: 'img/Symbol_',
   EXTN: '.png',
-  DEFAULT: 'img/default.png'
+  DEFAULT: 'img/Symbol_0.png'
 }
 
 class Game {
