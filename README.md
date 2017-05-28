@@ -14,6 +14,8 @@
 2. Run Manually
 
 * Download the source as zip folder.
+* Extract the Zip file.
+* Open the `index.html` in any browser.
 
 ### How to use ###
 
@@ -33,6 +35,19 @@ and exposing the api `/casino`.
 
 `[{"values":[1,1,5]},{"bonus":false},{"result":"Small Win"}]`
 
+#### Score Points ####
+
+* Score points has also been added
+
+1. No Win - 0 points
+2. Small Win - 10 points
+3. Big Win - 100 points.
+
+#### Bonus ####
+
+* Bonus is received randomly from server.
+* This enable a free play in the game for the user.
+
 #### Code Styling and Intendation ####
 
 JavaScript Standard Style  is been used for styling and intendation.
@@ -47,7 +62,12 @@ Unit Testing is enabled using mocha and chai.
 
 * Run: `npm test`
 
-This executes `mocha test/**/**spec.js` from `package.json` scripts
+This executes `webpack && standard --fix es6/*` from `package.json` scripts
+unit test has not been implemented for this one yet.
+
+#### Browser Compatability ####
+
+* Currently not supported in IE
 
 #### Bug Reporting ####
 
