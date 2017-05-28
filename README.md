@@ -65,9 +65,35 @@ Unit Testing is enabled using mocha and chai.
 This executes `webpack && standard --fix es6/*` from `package.json` scripts
 unit test has not been implemented for this one yet.
 
-#### Browser Compatability ####
+#### Viewing Options ####
 
-* Currently not supported in IE
+* Best Viewed in Desktop and Landscape view in mobile devices without address bar.
+
+#### Browser Supported ####
+
+* Below desktop browsers are supported based on Testing in Windows and MAC
+  1. Google Chrome
+  2. Mozilla Firefox
+  3. Safari
+
+* Below mobile devices were supported, tested in Chrome, Firefox and Safari.
+  1. iPhone 5SE
+  2. iPhone 6
+  3. iPhone 6s
+  4. iPhone 5s
+  5. Samsung Galaxy s4
+  6. Samsung Galaxy Note 2
+  7. One Plus 2
+  8. Samsung E5
+  9. Sony Experia C5 ultra
+  10. HTC Desire 630
+  11. Moto G4 Plus
+  12. iPhone 6s Plus
+  13. Red Me Note 4
+
+#### Browser Compatability issue ####
+
+* Currently not supported in IE.
 
 #### Bug Reporting ####
 
