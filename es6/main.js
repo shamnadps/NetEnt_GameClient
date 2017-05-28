@@ -28,10 +28,14 @@ class Game {
       this._setPoints(serverValue[2].result)
       document.querySelector('#slotSelected').style.display = 'block'
       document.querySelector('#slotRotation').style.display = 'none'
+      document.querySelector('#playButton').style.opacity = '1'
+      document.querySelector('#playMsg').style.display = 'block'
     })
   }
 
   /**
+  *Setting the display parameters correctly based on button click
+  * @private
   */
   _prePlayMethods () {
     document.querySelector('#gameInfo').className = ''
@@ -39,6 +43,8 @@ class Game {
     document.querySelector('#slotRotation').style.display = 'block'
     document.querySelector('#playButton').style.pointerEvents = 'none'
     document.querySelector('#bonusButton').style.pointerEvents = 'none'
+    document.querySelector('#playButton').style.opacity = '0.5'
+    document.querySelector('#playMsg').style.display = 'none'
   }
 
   /**
@@ -52,7 +58,7 @@ class Game {
   }
 
   /**
-  * set image
+  * set image for the slot after getting the response from server
   * @private
   **/
   _setImage () {
@@ -63,7 +69,7 @@ class Game {
   }
 
   /**
-  * show bonus option
+  * show bonus option when it is available.
   * @private
   **/
   _showBonus () {
@@ -72,6 +78,10 @@ class Game {
 
   /**
   * set points
+  * No Win - 0 points
+  * Small Win - 10 points
+  * Big Win = 100 points
+  * @param value - default 'No Win'
   * @private
   **/
   _setPoints (value = 'No Win.') {
@@ -88,7 +98,8 @@ class Game {
   }
 
   /**
-  * update point counter
+  * update point counter,
+  * Updated the points based on the wintype.
   * @param points, total, object
   * @private
   **/
@@ -107,6 +118,8 @@ class Game {
 
   /**
   * calling server
+  * Server is expected to be running at localhost:1337
+  * api exposed by server is `/casino`
   **/
   _requestServer () {
     let localPromise = new Promise((resolve, reject) => {
@@ -124,7 +137,10 @@ class Game {
   }
 }
 
+//creating object of the class
 let game = new Game()
+
+//Setting the onclick event listner for play button
 let playButton = document.querySelector('#playButton')
 if (playButton) {
   playButton.addEventListener('click', () => {
@@ -133,11 +149,13 @@ if (playButton) {
   })
 }
 
+//Setting the onclick event listner for bonus button
 let bonusButton = document.querySelector('#bonusButton')
 if (bonusButton) {
   bonusButton.addEventListener('click', () => {
     game.play()
     document.querySelector('#bonusButton').style.display = 'none'
+
   })
 }
 
