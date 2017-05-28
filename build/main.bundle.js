@@ -720,7 +720,7 @@ var Game = function () {
       var _this2 = this;
 
       var localPromise = new Promise(function (resolve, reject) {
-        fetch('http://57c9dc31.ngrok.io/casino', {
+        fetch('http://localhost:1337/casino', {
           method: 'get'
         }).then(function (d) {
           setTimeout(function () {
@@ -742,7 +742,7 @@ var Game = function () {
 
 var game = new Game();
 
-// Seeting the onclick event listner for play button
+// Setting the onclick event listner for play button
 var playButton = document.querySelector('#playButton');
 if (playButton) {
   playButton.addEventListener('click', function () {
@@ -751,7 +751,7 @@ if (playButton) {
   });
 }
 
-// Seeting the onclick event listner for bonus button
+// Setting the onclick event listner for bonus button
 var bonusButton = document.querySelector('#bonusButton');
 if (bonusButton) {
   bonusButton.addEventListener('click', function () {
