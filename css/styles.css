@@ -5,10 +5,11 @@ body {
   margin: 0;
   background-image: url("../img/bg.jpg");
   color: #fff;
+
 }
 
 .continer {
-  max-width: 1024px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -62,11 +63,13 @@ body {
 
 #playButton {
   cursor: pointer;
+  opacity: 1;
 }
 
 #playButton:hover {
   opacity: 0.5;
 }
+
 #bonusButton {
   cursor: pointer;
   display: none;
@@ -74,6 +77,7 @@ body {
 
 #slotRotation {
   display:none;
+  text-align: center;
 }
 
 #pointsImage  {
@@ -103,8 +107,7 @@ body {
 #gameInfo {
   position:absolute;
   padding:25px;
-  width:100%;
-  max-width:1024px;
+  width:95%;
   font-size:40px;
   display: inline-block;
   text-align: center;

@@ -644,6 +644,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
       "use strict";
 
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+
       var _createClass = function () {
         function defineProperties(target, props) {
           for (var i = 0; i < props.length; i++) {
@@ -839,6 +843,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           document.querySelector('#bonusButton').style.display = 'none';
         });
       }
+
+      exports.default = Game;
 
       /***/
     }])
