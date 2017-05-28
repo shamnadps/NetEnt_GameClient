@@ -701,10 +701,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
               _this._setPoints(serverValue[2].result);
               document.querySelector('#slotSelected').style.display = 'block';
               document.querySelector('#slotRotation').style.display = 'none';
+              document.querySelector('#playButton').style.opacity = '1';
+              document.querySelector('#playMsg').style.display = 'block';
             });
           }
 
           /**
+          *Setting the display parameters correctly based on button click
+          * @private
           */
 
         }, {
@@ -715,6 +719,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             document.querySelector('#slotRotation').style.display = 'block';
             document.querySelector('#playButton').style.pointerEvents = 'none';
             document.querySelector('#bonusButton').style.pointerEvents = 'none';
+            document.querySelector('#playButton').style.opacity = '0.5';
+            document.querySelector('#playMsg').style.display = 'none';
           }
 
           /**
@@ -733,7 +739,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           }
 
           /**
-          * set image
+          * set image for the slot after getting the response from server
           * @private
           **/
 
@@ -747,7 +753,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           }
 
           /**
-          * show bonus option
+          * show bonus option when it is available.
           * @private
           **/
 
@@ -759,6 +765,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
           /**
           * set points
+          * No Win - 0 points
+          * Small Win - 10 points
+          * Big Win = 100 points
+          * @param value - default 'No Win'
           * @private
           **/
 
@@ -780,7 +790,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
           }
 
           /**
-          * update point counter
+          * update point counter,
+          * Updated the points based on the wintype.
           * @param points, total, object
           * @private
           **/
@@ -802,6 +813,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
           /**
           * calling server
+          * Server is expected to be running at localhost:1337
+          * api exposed by server is `/casino`
           **/
 
         }, {
@@ -810,7 +823,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var _this2 = this;
 
             var localPromise = new Promise(function (resolve, reject) {
-              fetch('http://localhost:1337/casino', {
+              fetch('http://57c9dc31.ngrok.io/casino', {
                 method: 'get'
               }).then(function (d) {
                 setTimeout(function () {
@@ -827,7 +840,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         return Game;
       }();
 
+      //creating object of the class
+
+
       var game = new Game();
+
+      //Seeting the onclick event listner for play button
       var playButton = document.querySelector('#playButton');
       if (playButton) {
         playButton.addEventListener('click', function () {
@@ -836,6 +854,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         });
       }
 
+      //Seeting the onclick event listner for bonus button
       var bonusButton = document.querySelector('#bonusButton');
       if (bonusButton) {
         bonusButton.addEventListener('click', function () {

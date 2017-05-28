@@ -598,10 +598,14 @@ var Game = function () {
         _this._setPoints(serverValue[2].result);
         document.querySelector('#slotSelected').style.display = 'block';
         document.querySelector('#slotRotation').style.display = 'none';
+        document.querySelector('#playButton').style.opacity = '1';
+        document.querySelector('#playMsg').style.display = 'block';
       });
     }
 
     /**
+    *Setting the display parameters correctly based on button click
+    * @private
     */
 
   }, {
@@ -612,6 +616,8 @@ var Game = function () {
       document.querySelector('#slotRotation').style.display = 'block';
       document.querySelector('#playButton').style.pointerEvents = 'none';
       document.querySelector('#bonusButton').style.pointerEvents = 'none';
+      document.querySelector('#playButton').style.opacity = '0.5';
+      document.querySelector('#playMsg').style.display = 'none';
     }
 
     /**
@@ -630,7 +636,7 @@ var Game = function () {
     }
 
     /**
-    * set image
+    * set image for the slot after getting the response from server
     * @private
     **/
 
@@ -644,7 +650,7 @@ var Game = function () {
     }
 
     /**
-    * show bonus option
+    * show bonus option when it is available.
     * @private
     **/
 
@@ -656,6 +662,10 @@ var Game = function () {
 
     /**
     * set points
+    * No Win - 0 points
+    * Small Win - 10 points
+    * Big Win = 100 points
+    * @param value - default 'No Win'
     * @private
     **/
 
@@ -677,7 +687,8 @@ var Game = function () {
     }
 
     /**
-    * update point counter
+    * update point counter,
+    * Updated the points based on the wintype.
     * @param points, total, object
     * @private
     **/
@@ -699,6 +710,8 @@ var Game = function () {
 
     /**
     * calling server
+    * Server is expected to be running at localhost:1337
+    * api exposed by server is `/casino`
     **/
 
   }, {
@@ -707,7 +720,7 @@ var Game = function () {
       var _this2 = this;
 
       var localPromise = new Promise(function (resolve, reject) {
-        fetch('http://localhost:1337/casino', {
+        fetch('http://57c9dc31.ngrok.io/casino', {
           method: 'get'
         }).then(function (d) {
           setTimeout(function () {
@@ -724,7 +737,12 @@ var Game = function () {
   return Game;
 }();
 
+// creating object of the class
+
+
 var game = new Game();
+
+// Seeting the onclick event listner for play button
 var playButton = document.querySelector('#playButton');
 if (playButton) {
   playButton.addEventListener('click', function () {
@@ -733,6 +751,7 @@ if (playButton) {
   });
 }
 
+// Seeting the onclick event listner for bonus button
 var bonusButton = document.querySelector('#bonusButton');
 if (bonusButton) {
   bonusButton.addEventListener('click', function () {
