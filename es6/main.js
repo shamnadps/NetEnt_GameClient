@@ -1,4 +1,5 @@
 /* global fetch, document */
+import 'whatwg-fetch';
 const RESOURCE = {
   PREFIX: 'img/Symbol_',
   EXTN: '.png',
@@ -55,9 +56,9 @@ class Game {
   * @private
   **/
   _setImage () {
-    let imageHolder = document.querySelectorAll('.game-image')
-    for (let [index, value] of imageHolder.entries()) {
-      value.src = isNaN(this.serverValue[index]) ? RESOURCE.DEFAULT : `${RESOURCE.PREFIX}${this.serverValue[index]}${RESOURCE.EXTN}`
+    const imageHolder = document.querySelectorAll('.game-image')
+    for (let i =0 ; i < imageHolder.length; i++) {
+      imageHolder[i].src = isNaN(this.serverValue[i]) ? RESOURCE.DEFAULT : `${RESOURCE.PREFIX}${this.serverValue[i]}${RESOURCE.EXTN}`
     }
   }
 
@@ -140,4 +141,4 @@ if (bonusButton) {
   })
 }
 
-export default Game
+export default Game;
