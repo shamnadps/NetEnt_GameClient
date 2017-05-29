@@ -75,13 +75,15 @@ unit test has not been implemented for this one yet.
   1. Google Chrome
   2. Mozilla Firefox
   3. Safari
+  4. Opera
+  5. Microsoft Edge
 
-* Below mobile devices were supported, tested in Chrome, Firefox and Safari.
+* Below mobile devices were supported, tested in Chrome, Firefox, Opera and Safari.
   1. iPhone 5SE
   2. iPhone 6
   3. iPhone 6s
   4. iPhone 5s
-  5. Samsung Galaxy s4
+  5. Samsung Galaxy S4
   6. Samsung Galaxy Note 2
   7. One Plus 2
   8. Samsung E5
