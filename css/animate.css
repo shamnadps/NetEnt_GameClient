@@ -1,12 +1,11 @@
-
-#stage {
+.stage {
   width: 100%;
   -webkit-perspective: 500;
   perspective: 500;
 }
 
-#rotate {
-  height:180px;
+.rotate {
+  height: 180px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   box-sizing: border-box;
@@ -30,9 +29,9 @@
 .poster {
   position: absolute;
   text-align: center;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
-  color:black;
+  color: black;
 }
 
 #ring-1 {
@@ -40,22 +39,43 @@
   animation-duration: 1.5s;
   -webkit-animation-name: x-spin;
   -webkit-animation-duration: 1.5s;
+}
 
+#ring-2 {
+  animation-name: x-spin;
+  animation-duration: 1.5s;
+  -webkit-animation-name: x-spin;
+  -webkit-animation-duration: 1.5s;
+}
+
+#ring-3 {
+  animation-name: x-spin;
+  animation-duration: 1.5s;
+  -webkit-animation-name: x-spin;
+  -webkit-animation-duration: 1.5s;
 }
 
 @-webkit-keyframes x-spin {
-  0%    { -webkit-transform: rotateX(0deg); }
-  100%  { -webkit-transform: rotateX(360deg); }
+  0% {
+    -webkit-transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg);
+  }
 }
 
 @keyframes x-spin {
-  0%    { transform: rotateX(0deg); }
-  100%  { transform: rotateX(360deg); }
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
 }
 
 .rotate0 {
   transform: rotateX(0deg) translateZ(150px);
--webkit-transform: rotateX(0deg) translateZ(150px);
+  -webkit-transform: rotateX(0deg) translateZ(150px);
   -moz-transform: rotateX(0deg) translateZ(150px);
 }
 

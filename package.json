@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "webpack && http-server",
-    "test":
-      "webpack && standard --fix es6/* && mocha build/main.spec.bundle.js -r jsdom-global/register"
+    "test": "webpack && standard --fix es6/* && mocha build/main.spec.bundle.js -r jsdom-global/register"
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +21,10 @@
     "whatwg-fetch": "2.0.3"
   },
   "dependencies": {
-    "webpack": "^4.5.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4"
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.5.0",
+    "workbox-sw": "^3.1.0"
   }
 }

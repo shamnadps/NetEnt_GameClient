@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link href="css/animate.css" rel="stylesheet" type="text/css">
   <link href="css/blink.css" rel="stylesheet" type="text/css">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/icon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Casino Game">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="Shamnad/Vinu">
+  <title>Casino Game</title>
 </head>
+
 <body>
   <div class="continer">
 
@@ -14,63 +39,131 @@
     </div>
     <div id="gameInfo" class="gold">Let's play</div>
     <div class="row">
-        <img id="pointsImage" src="img/points.png">
-        <div id="pointHolder"><div id="points">0</div></div>
+      <img id="pointsImage" alt="Points:" src="img/points.png">
+      <div id="pointHolder">
+        <div id="points">0</div>
+      </div>
     </div>
 
     <div class="row" id="slotSelected">
       <div class="col">
-        <div class="img-wrap"><img src="img/Symbol_0.png" class="game-image" id="slot1" /></div>
+        <div class="img-wrap">
+          <img src="img/Symbol_0.png" alt="1" class="game-image" id="slot1" />
+        </div>
       </div>
       <div class="col">
-        <div class="img-wrap"><img src="img/Symbol_0.png" class="game-image" id="slot2" /></div>
+        <div class="img-wrap">
+          <img src="img/Symbol_0.png" alt="2" class="game-image" id="slot2" />
+        </div>
       </div>
       <div class="col">
-        <div class="img-wrap"><img src="img/Symbol_0.png" class="game-image" id="slot3"/></div>
+        <div class="img-wrap">
+          <img src="img/Symbol_0.png" alt="3" class="game-image" id="slot3" />
+        </div>
       </div>
     </div>
     <div class="row" id="slotRotation">
       <div class="col">
-        <div id="stage">
-          <div id="rotate">
+        <div class="stage">
+          <div class="rotate">
             <div id="ring-1" class="ring">
-              <div class="poster rotate0"><img src="img/Symbol_0.png"></div>
-              <div class="poster rotate60"><img src="img/Symbol_1.png"></div>
-              <div class="poster rotate120"><img src="img/Symbol_2.png"></div>
-              <div class="poster rotate180"><img src="img/Symbol_3.png"></div>
-              <div class="poster rotate240"><img src="img/Symbol_4.png"></div>
-              <div class="poster rotate300"><img src="img/Symbol_5.png"></div>
-              <div class="poster rotate360"><img src="img/Symbol_0.png"></div>
+              <div class="poster rotate0">
+                <img src="img/Symbol_0.png">
+              </div>
+              <div class="poster rotate30">
+                <img src="img/Symbol_1.png">
+              </div>
+              <div class="poster rotate60">
+                <img src="img/Symbol_1.png">
+              </div>
+              <div class="poster rotate90">
+                <img src="img/Symbol_1.png">
+              </div>
+              <div class="poster rotate120">
+                <img src="img/Symbol_2.png">
+              </div>
+              <div class="poster rotate150">
+                <img src="img/Symbol_2.png">
+              </div>
+              <div class="poster rotate180">
+                <img src="img/Symbol_3.png">
+              </div>
+              <div class="poster rotate210">
+                <img src="img/Symbol_3.png">
+              </div>
+              <div class="poster rotate240">
+                <img src="img/Symbol_4.png">
+              </div>
+              <div class="poster rotate270">
+                <img src="img/Symbol_4.png">
+              </div>
+              <div class="poster rotate300">
+                <img src="img/Symbol_5.png">
+              </div>
+              <div class="poster rotate330">
+                <img src="img/Symbol_5.png">
+              </div>
+              <div class="poster rotate360">
+                <img src="img/Symbol_0.png">
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div id="stage">
-          <div id="rotate">
-            <div id="ring-1" class="ring">
-              <div class="poster rotate0"><img src="img/Symbol_0.png"></div>
-              <div class="poster rotate60"><img src="img/Symbol_1.png"></div>
-              <div class="poster rotate120"><img src="img/Symbol_2.png"></div>
-              <div class="poster rotate180"><img src="img/Symbol_3.png"></div>
-              <div class="poster rotate240"><img src="img/Symbol_4.png"></div>
-              <div class="poster rotate300"><img src="img/Symbol_5.png"></div>
-              <div class="poster rotate360"><img src="img/Symbol_0.png"></div>
+        <div class="stage">
+          <div class="rotate">
+            <div id="ring-2" class="ring">
+              <div class="poster rotate0">
+                <img src="img/Symbol_0.png">
+              </div>
+              <div class="poster rotate60">
+                <img src="img/Symbol_1.png">
+              </div>
+              <div class="poster rotate120">
+                <img src="img/Symbol_2.png">
+              </div>
+              <div class="poster rotate180">
+                <img src="img/Symbol_3.png">
+              </div>
+              <div class="poster rotate240">
+                <img src="img/Symbol_4.png">
+              </div>
+              <div class="poster rotate300">
+                <img src="img/Symbol_5.png">
+              </div>
+              <div class="poster rotate360">
+                <img src="img/Symbol_0.png">
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div id="stage">
-          <div id="rotate">
-            <div id="ring-1" class="ring">
-              <div class="poster rotate0"><img src="img/Symbol_0.png"></div>
-              <div class="poster rotate60"><img src="img/Symbol_1.png"></div>
-              <div class="poster rotate120"><img src="img/Symbol_2.png"></div>
-              <div class="poster rotate180"><img src="img/Symbol_3.png"></div>
-              <div class="poster rotate240"><img src="img/Symbol_4.png"></div>
-              <div class="poster rotate300"><img src="img/Symbol_5.png"></div>
-              <div class="poster rotate360"><img src="img/Symbol_0.png"></div>
+        <div class="stage">
+          <div class="rotate">
+            <div id="ring-3" class="ring">
+              <div class="poster rotate0">
+                <img src="img/Symbol_0.png">
+              </div>
+              <div class="poster rotate60">
+                <img src="img/Symbol_1.png">
+              </div>
+              <div class="poster rotate120">
+                <img src="img/Symbol_2.png">
+              </div>
+              <div class="poster rotate180">
+                <img src="img/Symbol_3.png">
+              </div>
+              <div class="poster rotate240">
+                <img src="img/Symbol_4.png">
+              </div>
+              <div class="poster rotate300">
+                <img src="img/Symbol_5.png">
+              </div>
+              <div class="poster rotate360">
+                <img src="img/Symbol_0.png">
+              </div>
             </div>
           </div>
         </div>
@@ -81,19 +174,34 @@
       </div>
       <div class="colnoborder">
         <div class="img-wrap" id="playButton">
-          <img src="img/button.png" />
+          <img alt="Play" src="img/button.png" />
           <div id="playMsg">
-              Click to Play
+            Click to Play
           </div>
         </div>
       </div>
       <div class="colnoborder">
-        <div class="blink-image" id="bonusButton"><img src="img/bonus.png"/></div>
+        <div class="blink-image" id="bonusButton">
+          <img src="img/bonus.png" />
+        </div>
       </div>
     </div>
 
   </div>
-
+  <!-- Service worker registration -->
+  <script type="text/javascript">
+    if (navigator.serviceWorker.controller) {
+      console.log('[PWA Builder] active service worker found, no need to register')
+    } else {
+      //Register the ServiceWorker
+      navigator.serviceWorker.register('pwabuilder-sw.js', {
+        scope: './'
+      }).then(function (reg) {
+        console.log('Service worker has been registered for scope:' + reg.scope);
+      });
+    }
+  </script>
   <script src="build/main.bundle.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,10 @@
 body {
-  font-family: 'Calibri', 'Sans Serif';
+  font-family: "Calibri", "Sans Serif";
   font-size: 16px;
   padding: 0;
   margin: 0;
   background-image: url("../img/bg.jpg");
   color: #fff;
-
 }
 
 .continer {
@@ -15,7 +14,7 @@ body {
 
 .col {
   width: 33.33%;
-  height:200px;
+  height: 200px;
   overflow: hidden;
   float: left;
   text-align: center;
@@ -38,7 +37,7 @@ body {
   float: left;
   text-align: center;
   padding: 20px;
-  height:120px;
+  height: 120px;
   box-sizing: border-box;
 }
 
@@ -76,50 +75,48 @@ body {
 }
 
 #slotRotation {
-  display:none;
+  display: none;
   text-align: center;
 }
 
-#pointsImage  {
-  width:5%;
-  height:50px;
-  float:left;
-  padding:20px;
+#pointsImage {
+  float: left;
+  padding: 20px;
 }
 
 #pointHolder {
-  font-size:36px;
-  padding-top:25px;
+  font-size: 36px;
+  padding-top: 25px;
   padding-right: 25px;
-  width:70%;
-  height:80px;
-  float:left;
+  width: 70%;
+  height: 80px;
+  float: left;
   text-align: left;
   display: inline-block;
   overflow: hidden;
 }
 
 #points {
-  width:20%;
+  width: 20%;
 }
 
 #gameInfo {
-  position:absolute;
-  padding:25px;
-  width:95%;
-  font-size:40px;
+  position: absolute;
+  width: 100%;
+  font-size: 40px;
+  margin-top: 10px;
   display: inline-block;
   text-align: center;
   font-weight: bold;
 }
 
-@media only screen and (orientation:portrait){
+@media only screen and (orientation: portrait) {
   #warning {
     display: block;
   }
 }
-@media only screen and (orientation:landscape){
+@media only screen and (orientation: landscape) {
   #warning {
-    display:none;
+    display: none;
   }
 }
